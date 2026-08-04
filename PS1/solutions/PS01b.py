@@ -53,7 +53,7 @@ class LogisticRegression(LinearModel):
             predictions = 1 / (1 + np.exp(-x @ self.theta))
             gradient = (1 / m) * (x.T @ (predictions - y))
             S = predictions * (1 - predictions)
-            hessian = ((x.T * S.T) @ x) / m
+            hessian = (x.T @ (S.T * x)) / m
 
             self.theta -= np.linalg.pinv(hessian) @ gradient
 
