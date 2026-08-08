@@ -63,7 +63,7 @@ class GDA(LinearModel):
         sigma_inv = np.linalg.pinv(sigma)
         self.theta[1:] = sigma_inv.dot(mu_1 - mu_0)
         self.theta[0] = (mu_0 + mu_1).T.dot(
-            sigma_inv.dot(mu_0 - mu_1) + np.log((1 - phi) / phi)) / 2
+            sigma_inv.dot(mu_0 - mu_1) - np.log((1 - phi) / phi)) / 2
 
         return self.theta
         # *** END CODE HERE ***
