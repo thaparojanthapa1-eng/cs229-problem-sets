@@ -78,7 +78,7 @@ class LogisticRegression(LinearModel):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) != 5:
-        print("Usage: python PS01b.py <train_path> <eval_path> <pred_path>")
+        print("Usage: python PS01b.py <train_path> <eval_path> <pred_path> <png_path>")
     else:
         train_path, eval_path, pred_path, png_path = sys.argv[1], sys.argv[
             2], sys.argv[3], sys.argv[4]
